@@ -1,0 +1,39 @@
+
+.login-page-parent{
+    background-color: #2f397f;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    .login-page{
+        background-color: #fff;
+        width: 300px;
+        margin: auto;
+        padding:16px;
+        border-radius: 10px;
+        ::ng-deep .mat-mdc-tab-body-content, ::ng-deep .mat-mdc-tab-body.mat-mdc-tab-body-active{
+            overflow: inherit;
+        }
+        ::ng-deep .mat-mdc-tab-labels{
+            justify-content: center;
+        }
+        .mt-25{
+            margin-top: 25px;
+        }
+        ::ng-deep .mat-mdc-form-field{
+            width: 100%;
+        }
+        ::ng-deep .mat-mdc-form-field-input-control.mat-mdc-form-field-input-control{
+            font-size: 14px;
+        }
+        ::ng-deep .mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label{
+            font-size: 14px;
+        }
+        .primary-btn{
+            background-color: indianred;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }    
+}

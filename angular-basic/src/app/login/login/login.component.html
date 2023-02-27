@@ -1,0 +1,47 @@
+<div class="login-page-parent">
+  <div class="login-page">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="Start">
+      <mat-tab label="Login">
+      <form class="example-form mt-25" [formGroup]="loginform" (ngSubmit)="onsubmit()">
+          <mat-form-field class="example-full-width mb-3">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput placeholder="Enter your Email" formControlName="loginemail" id="loginemail" namae="loginemail">
+            <mat-error *ngIf="!loginform.get('loginemail').valid && loginform.get('loginemail').touched">Please enter valid email</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width mb-3">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Enter your password" formControlName="loginpassword" id="loginpassword">
+            <mat-error *ngIf="!loginform.get('loginpassword').valid && loginform.get('loginpassword').touched">Please enter passwors</mat-error>
+            <!-- <mat-error *ngIf="!loginform.get('loginpassword').valid">Please enter valid email</mat-error> -->
+          </mat-form-field>
+          <div class="text-center">
+            <button mat-raised-button class="primary-btn btn" (click)="loginpage()" [disabled]="!loginform.valid">Login</button>
+          </div>
+        </form>
+      </mat-tab>
+       <mat-tab label="Signup">
+        <form class="example-form mt-25">
+            <mat-form-field class="example-full-width">
+              <mat-label>Username</mat-label>
+              <input type="text" matInput placeholder="Enter your Username">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="Enter your password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="Enter your password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Confirm Password</mat-label>
+              <input type="password" matInput placeholder="Enter your password">
+            </mat-form-field>
+            <div class="text-center">
+              <button mat-raised-button class="primary-btn btn" (click)="signuppage()">Signup</button>
+            </div>
+          </form>
+        </mat-tab> 
+      </mat-tab-group>
+  </div>
+</div>
