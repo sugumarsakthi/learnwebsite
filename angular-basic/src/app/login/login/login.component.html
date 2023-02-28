@@ -5,40 +5,44 @@
       <form class="example-form mt-25" [formGroup]="loginform" (ngSubmit)="onsubmit()">
           <mat-form-field class="example-full-width mb-3">
             <mat-label>Email</mat-label>
-            <input type="text" matInput placeholder="Enter your Email" formControlName="loginemail" id="loginemail" namae="loginemail">
+            <input type="text" autocomplete="off" matInput placeholder="Enter your Email" formControlName="loginemail" id="loginemail" name="loginemail">
             <mat-error *ngIf="!loginform.get('loginemail').valid && loginform.get('loginemail').touched">Please enter valid email</mat-error>
           </mat-form-field>
           <mat-form-field class="example-full-width mb-3">
             <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Enter your password" formControlName="loginpassword" id="loginpassword">
+            <input type="password" autocomplete="off" matInput placeholder="Enter your password" formControlName="loginpassword" id="loginpassword">
             <mat-error *ngIf="!loginform.get('loginpassword').valid && loginform.get('loginpassword').touched">Please enter passwors</mat-error>
             <!-- <mat-error *ngIf="!loginform.get('loginpassword').valid">Please enter valid email</mat-error> -->
           </mat-form-field>
           <div class="text-center">
-            <button mat-raised-button class="primary-btn btn" (click)="loginpage()" [disabled]="!loginform.valid">Login</button>
+            <button mat-raised-button autocomplete="off" class="primary-btn btn" (click)="loginpage()" [disabled]="!loginform.valid">Login</button>
           </div>
         </form>
       </mat-tab>
        <mat-tab label="Signup">
-        <form class="example-form mt-25">
+        <form class="example-form mt-25" [formGroup]="registerForm" (ngSubmit)="registersubmit()">
             <mat-form-field class="example-full-width">
               <mat-label>Username</mat-label>
-              <input type="text" matInput placeholder="Enter your Username">
+              <input type="text" matInput autocomplete="off" placeholder="Enter your Username" formControlName="regusername" id="regusername" name="regusername">
+              <mat-error *ngIf="!registerForm.get('regusername').valid && registerForm.get('regusername').touched">Please enter user name</mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Email</mat-label>
-              <input type="email" matInput placeholder="Enter your password">
+              <input type="email" matInput autocomplete="off" placeholder="Enter your Email" formControlName="regmail" id="regmail" name="regmail">
+              <mat-error *ngIf="!registerForm.get('regmail').valid && registerForm.get('regmail').touched">Please enter email</mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Password</mat-label>
-              <input type="password" matInput placeholder="Enter your password">
+              <input type="password" matInput autocomplete="off" placeholder="Enter your password" formControlName="regpass" id="regpass" name="regpass">
+              <mat-error *ngIf="!registerForm.get('regpass').valid && registerForm.get('regpass').touched">Please enter password</mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <mat-label>Confirm Password</mat-label>
-              <input type="password" matInput placeholder="Enter your password">
+              <input type="password" matInput autocomplete="off" placeholder="Enter your confirm password"  formControlName="regconfirmpass" id="regconfirmpass" name="regconfirmpass">
+              <mat-error *ngIf="!registerForm.get('regconfirmpass').valid && registerForm.get('regconfirmpass').touched">Please enter confirm password</mat-error>
             </mat-form-field>
             <div class="text-center">
-              <button mat-raised-button class="primary-btn btn" (click)="signuppage()">Signup</button>
+              <button mat-raised-button  class="primary-btn btn" (click)="signuppage()" [disabled]="!registerForm.valid">Signup</button>
             </div>
           </form>
         </mat-tab> 

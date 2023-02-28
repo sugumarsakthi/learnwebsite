@@ -15,12 +15,19 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   submitted = false;
   loginform!: FormGroup;
+  registerForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router){}
   ngOnInit(){   
     this.loginform = new FormGroup({
       'loginemail': new FormControl ('',[Validators.required,Validators.email]),
       'loginpassword':new FormControl ('',Validators.required),
+    });
+    this.registerForm = new FormGroup({
+      'regusername':new FormControl ('',Validators.required),
+      'regmail': new FormControl ('',[Validators.required,Validators.email]),
+      'regpass':new FormControl ('',Validators.required),
+      'regconfirmpass':new FormControl ('',Validators.required),
     })
   }
   loginpage(){
@@ -32,7 +39,11 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     this.router.navigate(['/home']);
     console.log(this.loginform);
-
+  }
+  registersubmit(){
+    this.submitted = true;
+    this.router.navigate(['/home']);
+    console.log(this.registerForm);
   }
  
 }
